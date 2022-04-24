@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 
 class CreateTrainsTable extends Migration
 {
@@ -22,8 +23,8 @@ class CreateTrainsTable extends Migration
             $table->timeTz('orario_di_arrivo', 0);
             $table->smallInteger('codice_treno')->unsigned();
             $table->tinyInteger('numero_carrozze')->unsigned();
-            $table->boolean('in_orario')->default(0);
-            $table->boolean('cancellato')->default(0);
+            $table->boolean('in_orario')->default(true);
+            $table->boolean('cancellato')->default(false);
             $table->timestamps();
         });
     }
